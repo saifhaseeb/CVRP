@@ -10,10 +10,12 @@ def openfile():
     f = open(filename)
     extension = os.path.splitext(filename)[1][1:]
 
-    if extension == '.tsp':
+    if extension == '.vrp':
         return f.read()
     else:
         messagebox.showinfo("Error", "Wrong file input, please choose a tsp file")
+
+
 
 
 root = Tk()
