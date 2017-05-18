@@ -1,20 +1,24 @@
+import tkinter as tk
 from tkinter import *
 from tkinter.filedialog import askopenfilename
-import os.path
 from tkinter import messagebox
+import os.path
 
 
 def openfile():
 
     filename = askopenfilename(parent=root)
-    f = open(filename)
     extension = os.path.splitext(filename)[1][1:]
 
-    if extension == '.vrp':
-        return f.read()
-    else:
+    if extension == '':
         messagebox.showinfo("Error", "Wrong file input, please choose a vrp file")
 
+    else:
+        with open(filename) as f:
+            content = f.readlines()
+
+        content = [x.strip() for x in content]
+        print(content)
 
 
 
