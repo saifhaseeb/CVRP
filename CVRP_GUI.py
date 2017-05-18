@@ -13,7 +13,7 @@ def openfile():
     if extension == '.vrp':
         return f.read()
     else:
-        messagebox.showinfo("Error", "Wrong file input, please choose a tsp file")
+        messagebox.showinfo("Error", "Wrong file input, please choose a vrp file")
 
 
 
