@@ -36,16 +36,18 @@ def openFile():
         totalnode = getNum(content[3])
         print(totalnode)
 
-    def getCoordinates():
+    def getGridSize():
 
         flag = False
-
         i = 0
         k = len(content)
         largestnumberArray = []
 
         while not flag:
             while i < k:
+
+                if content[i] == 'EOF':
+                    flag = True
 
                 if content[i][0].isdigit():
                     largestnumber = findLargestNumber(content[i])
@@ -55,8 +57,22 @@ def openFile():
                 else:
                     i += 1
 
-            return max(largestnumberArray)
+            largestCoordinate = max(largestnumberArray)
 
+        x = 0
+
+        if largestCoordinate < 10000:
+            x = 10000
+
+        elif largestCoordinate < 1000:
+            x = 1000
+
+        elif largestCoordinate > 100:
+            x = 100
+
+        return x
+
+    
 
 
 root = Tk()
