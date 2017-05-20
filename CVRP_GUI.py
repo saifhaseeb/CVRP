@@ -34,7 +34,6 @@ def openFile():
         content = [x.strip() for x in content]
         print(content)
         totalnode = getNum(content[3])
-        print(totalnode)
 
     def getGridSize():
 
@@ -64,15 +63,20 @@ def openFile():
         if largestCoordinate < 10000:
             x = 10000
 
-        elif largestCoordinate < 1000:
+        if largestCoordinate < 1000:
             x = 1000
 
-        elif largestCoordinate > 100:
+        if largestCoordinate > 100:
             x = 100
 
         return x
 
-    
+    def createGrid():
+
+        x = [['.' for i in range(getGridSize())] for j in range(getGridSize())]
+        return x
+
+
 
 
 root = Tk()
